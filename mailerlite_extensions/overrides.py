@@ -3,7 +3,7 @@ import re
 import mailerlite
 
 
-class SubscribersExtended(mailerlite.Subscribers):
+class MailerliteExtensionsSubscribers(mailerlite.Subscribers):
     def __init__(self, api_client):
         super().__init__(api_client)
 
@@ -51,7 +51,7 @@ class SubscribersExtended(mailerlite.Subscribers):
         ).json()
 
 
-class CachedGroups(mailerlite.Groups):
+class MailerliteExtensionsCachedGroups(mailerlite.Groups):
     def __init__(self, api_client):
         super().__init__(api_client)
         self._group_cache = {}
@@ -62,7 +62,7 @@ class CachedGroups(mailerlite.Groups):
         and the value is the response from Mailerlite
 
         :return: Group object with populated cache
-        :rtype: CachedGroups
+        :rtype: MailerliteExtensionsCachedGroups
         """
         group_response = self.list()
 
@@ -125,7 +125,7 @@ class CachedGroups(mailerlite.Groups):
         return create_result
 
 
-class MailerLiteExtended(mailerlite.Client):
+class MailerliteExtensionsClient(mailerlite.Client):
     """
     Extends the Mailerlite Python client and overrides subscribers and groups with
     useful features like email updates and a cached group function. Call populate_cache to download
@@ -134,8 +134,8 @@ class MailerLiteExtended(mailerlite.Client):
     def __init__(self, config=False):
         super().__init__(config or {})
 
-        self.subscribers = SubscribersExtended(self.api_client)
-        self.groups = CachedGroups(self.api_client)
+        self.subscribers = MailerliteExtensionsSubscribers(self.api_client)
+        self.groups = MailerliteExtensionsCachedGroups(self.api_client)
 
     def populate_cache(self):
         """
