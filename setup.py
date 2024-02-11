@@ -1,6 +1,9 @@
 import setuptools
 from mailerlite_extensions.version import Version
 
+PACKAGES = setuptools.find_packages(exclude=[
+    'tests'
+])
 
 setuptools.setup(name='mailerlite_extensions',
                  version=Version('1.0.0').number,
@@ -9,8 +12,10 @@ setuptools.setup(name='mailerlite_extensions',
                  author='Kyle Shovan',
                  author_email='kyle@codebykyle.com',
                  url='https://github.com/codebykyle/mailerlite_extensions',
-                 py_modules=['mailerlite_extensions'],
-                 install_requires=[],
+                 packages=PACKAGES,
+                 install_requires=[
+                     'mailerlite'
+                 ],
                  license='MIT License',
                  zip_safe=False,
                  keywords='mailerlite',
