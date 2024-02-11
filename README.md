@@ -3,8 +3,6 @@ mailerlite_extensions
 
 [![Build Status](https://travis-ci.org/mtchavez/python-package-boilerplate.png?branch=master)](https://travis-ci.org/mtchavez/python-package-boilerplate)
 
-Boilerplate for a Python Package
-
 ## Mailerlite Extensions
 This package extends the Mailerlite Python library to include useful features like a cached group model which
 limits round trips to Mailerlite, and additional subscriber functions left out of the official package like
