@@ -19,14 +19,14 @@ or via ssh:
 ## Usage
 
 ```python
-    from mailerlite_extensions.overrides import MailerliteExtensionsClient
-    
-    api = MailerliteExtensionsClient({
-        'api_key': MAILERLITE_API_KEY
-    })
+from mailerlite_extensions.overrides import MailerliteExtensionsClient
 
-    # Build the group cache
-    api.populate_cache()
+api = MailerliteExtensionsClient({
+    'api_key': MAILERLITE_API_KEY
+})
+
+# Build the group cache
+api.populate_cache()
 ```
 
 Get or create a group
