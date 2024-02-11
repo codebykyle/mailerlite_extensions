@@ -16,6 +16,27 @@ or via ssh:
 
 `pip install git+ssh://git@github.com/codebykyle/mailerlite_extensions.git`
 
+## Usage
+
+```python
+    from mailerlite_extensions.overrides import MailerliteExtensionsClient
+    
+    api = MailerliteExtensionsClient({
+        'api_key': MAILERLITE_API_KEY
+    })
+
+    # Build the group cache
+    api.populate_cache()
+```
+
+Get or create a group
+
+`api.groups.get_or_create_group("testing")`
+
+Update a users email address:
+
+`api.subscribers.update_email('old+email@example.com', 'new+email@example.com')`
+
 ## Requirements
 
 Package requirements are handled using pip. To install them do
