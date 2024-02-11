@@ -10,7 +10,7 @@ updating a users e-mail address.
 
 ## Installing
 
-`pip install git+https://github.com/codebykyle/mailerlite_extensions/tree/master`
+`pip install git+https://github.com/codebykyle/mailerlite_extensions`
 
 or via ssh:
 
