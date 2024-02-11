@@ -14,7 +14,7 @@ updating a users e-mail address.
 
 or via ssh:
 
-`pip install git+ssh://git@github.com:codebykyle/mailerlite_extensions.git`
+`pip install git+ssh://git@github.com/codebykyle/mailerlite_extensions.git`
 
 ## Requirements
 
