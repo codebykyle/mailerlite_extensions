@@ -8,6 +8,13 @@ This package extends the Mailerlite Python library to include useful features li
 limits round trips to Mailerlite, and additional subscriber functions left out of the official package like
 updating a users e-mail address.
 
+## Installing
+
+`pip install git+https://github.com/codebykyle/mailerlite_extensions/tree/master`
+
+or via ssh:
+
+`pip install git+ssh://git@github.com:codebykyle/mailerlite_extensions.git`
 
 ## Requirements
 
@@ -27,7 +34,6 @@ Run your tests with ```py.test``` in the root directory.
 Coverage is ran by default and is set in the ```pytest.ini``` file.
 To see an html output of coverage open ```htmlcov/index.html``` after running the tests.
 
-## Travis CI
+## Todo
 
-There is a ```.travis.yml``` file that is set up to run your tests for python 2.7
-and python 3.2, should you choose to use it.
+- Add unit tests

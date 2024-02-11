@@ -11,5 +11,6 @@ class TestVersion(unittest.TestCase):
 
     def test_version_immutable(self):
         ver = Version("1.0.0")
+
         with pytest.raises(TypeError) as e:
             ver.number = "1.1.0"
