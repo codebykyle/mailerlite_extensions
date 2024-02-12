@@ -7,6 +7,20 @@ class MailerliteExtensionsSubscribers(mailerlite.Subscribers):
     def __init__(self, api_client):
         super().__init__(api_client)
 
+    def upsert(self, email, **kwargs):
+        subscriber = self.get(email)
+
+        if 'data' in subscriber:
+            return self.update(
+                email,
+                **kwargs
+            )
+        else:
+            return self.create(
+                email,
+                **kwargs
+            )
+
     def update_email(self, old_email, new_email):
         """
         Update a subscribers email
@@ -131,6 +145,7 @@ class MailerliteExtensionsClient(mailerlite.Client):
     useful features like email updates and a cached group function. Call populate_cache to download
     caches
     """
+
     def __init__(self, config=False):
         super().__init__(config or {})
 
