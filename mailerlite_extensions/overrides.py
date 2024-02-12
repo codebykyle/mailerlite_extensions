@@ -122,7 +122,8 @@ class MailerliteExtensionsCachedGroups(mailerlite.Groups):
         create_result = self.create(group_name)
         self._group_cache[group_name] = create_result['data']
 
-        return create_result
+        # Return from the cache
+        return self._group_cache[group_name]
 
 
 class MailerliteExtensionsClient(mailerlite.Client):
